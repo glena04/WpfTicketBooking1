@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfTicketBooking1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Biljettbokning" Height="350" Width="525" Background="#FFA7D07B">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="CurrentDateTextBlock" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" />
+        <TextBlock Text="Username:" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" />
+        <TextBox x:Name="UsernameTextBox" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,10,0" Width="200" />
+        <TextBlock Text="Password:" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" RenderTransformOrigin="0.536,0.51" />
+        <PasswordBox x:Name="PasswordBox" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,10,0" Width="200" />
+        <Button Content="Logga in" Grid.Row="2" VerticalAlignment="Top" Margin="80,89,0,0" Click="LoginButton_Click" RenderTransformOrigin="-0.012,3.466" HorizontalAlignment="Left" Width="100" />
+
+        <Button Content="Registrera dig" Click="RegisterButton_Click" Margin="80,126,0,-37" Grid.Row="2" HorizontalAlignment="Left" Width="100"/>
+    </Grid>
+</Window>
+
+

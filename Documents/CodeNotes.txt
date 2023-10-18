@@ -1,0 +1,58 @@
+using OfficeOpenXml;
+using System;
+using System.Collections.Generic;
+using System.Drawing.Printing;
+using System.IO;
+using System.Linq;
+using System.Reflection.Metadata;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Media3D;
+using System.Xml.Linq;
+
+namespace WpfTicketBooking1
+{
+    internal class CodeNotes
+    {
+    }
+    private void CancelButton_Click(object sender, RoutedEventArgs e)
+    {
+        //string username = getloggedInUsername (); // Replace with your method to get the currently logged-in user's username
+        // Use the loggedInUsername field directly
+        string username = loggedInUsername;
+        // Load the Excel file that stores booking information
+        string excelFilePath = "F:/WpfTicketBooking1 - kopia/TicketBookingDataK.xlsx"; // Path to your Excel file
+        FileInfo file = new FileInfo(excelFilePath);
+
+        using (ExcelPackage package = new ExcelPackage(file))
+        {
+            ExcelWorksheet worksheet = package.Workbook.Worksheets[2];
+            int rowCount = worksheet.Dimension.Rows;
+
+            for (int row = 2; row <= rowCount; row++)
+            {
+                string storedUsername = worksheet.Cells[row, 1].Text;
+
+                // Check if the username in the Excel row matches the logged-in user's username
+                if (username == storedUsername)
+                {
+                    // Cancel the ticket by deleting the row (or marking it as canceled)
+                    worksheet.DeleteRow(row);
+                    package.Save();
+                    MessageBox.Show("Ticket cancellation successful.");
+                    return;
+                }
+            }
+        }
+
+        MessageBox.Show("No tickets found for cancellation.");
+
+    }
+
+   
+
+}
+
+< Button Name = "CancelButton" Content = "Cancel" HorizontalAlignment = "Left" Height = "24" Margin = "227,10,0,0" VerticalAlignment = "Top" Width = "95" Click = "CancelButton_Click" />
