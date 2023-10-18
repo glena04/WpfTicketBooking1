@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>login-icon-3043-Windows.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Registration.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="~%24TicketBookingData.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Registration.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="login-icon-3043-Windows.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="WpfTicketBooking1.sln" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.0.0-rc1" />
+  </ItemGroup>
+
+</Project>
