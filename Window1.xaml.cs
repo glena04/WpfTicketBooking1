@@ -67,7 +67,7 @@ namespace WpfTicketBooking1
         private void LoadEventDataFromExcel()
         {
             // Specify the path to your Excel file
-            string excelFilePath = @"F:\WpfTicketBooking1 - kopia/TicketBookingDataK.xlsx";
+            string excelFilePath = @"F:\WptTicketBooking1github/TicketBookingDataK.xlsx";
 
             try
             {
@@ -115,7 +115,7 @@ namespace WpfTicketBooking1
         private void LoadBookingDataFromExcel()
         {
             // Specify the path to your Excel file
-            string excelFilePath = @"F:\WpfTicketBooking1 - kopia/TicketBookingDataK.xlsx";
+            string excelFilePath = @"F:\WptTicketBooking1github/TicketBookingDataK.xlsx";
 
             try
             {
@@ -170,7 +170,7 @@ namespace WpfTicketBooking1
             // Use the loggedInUsername field directly
             string username = loggedInUsername;
             // Load the Excel file that stores booking information
-            string excelFilePath = @"F:\WpfTicketBooking1 - kopia/TicketBookingDataK.xlsx";// Path to your Excel file
+            string excelFilePath = @"F:\WptTicketBooking1github/TicketBookingDataK.xlsx";// Path to your Excel file
             
             FileInfo file = new FileInfo(excelFilePath);
 
